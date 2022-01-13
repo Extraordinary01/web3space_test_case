@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-lg-9">
+			<table class="table">
+				<thead>
+					<tr>
+						{% for item in table_headers %}
+						<th scope="col">{{ item }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in data %}
+					<tr>
+						<td>{{ item.title }}</td>
+						<td>{{ item.value }}</td>
+						<td>{{ item.timestamp }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-lg-3">{% block sort %} {% endblock sort %}</div>
+	</div>
+</div>
+{% endblock content %}

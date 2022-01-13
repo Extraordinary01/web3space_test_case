@@ -1,0 +1,23 @@
+{% extends 'crypto/data_table.html' %} {% block sort %}
+<h4>Сортировка</h4>
+<div class="filter-column mb-4">
+	<a
+		class="btn"
+		data-bs-toggle="collapse"
+		href="#column"
+		role="button"
+		aria-expanded="false"
+		aria-controls="column"
+		style="background-color: #e3f2fd"
+		>По наименованию <i class="bi bi-arrow-down"></i> <span class="arrow"></span
+	></a>
+	<ul class="sub-menu collapse mt-4" id="column">
+		<li>
+			<a href="{% url 'coingecko' %}?sort=True&descending=True">По убыванию</a>
+		</li>
+		<li>
+			<a href="{% url 'coingecko' %}?sort=True">По возрастанию</a>
+		</li>
+	</ul>
+</div>
+{% endblock sort %}
